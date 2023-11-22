@@ -1,0 +1,9 @@
+[versions]
+collectionKtx = "1.4.5"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+
+[libraries]
+androidx-collection-ktx = { module = "androidx.collection:collection-ktx", version.ref = "collectionKtx" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "junitVersion" }
+junit = { module = "junit:junit", version.ref = "junit" }

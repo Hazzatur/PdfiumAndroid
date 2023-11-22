@@ -1,5 +1,5 @@
-src/main/libs
-src/main/obj
+library/src/main/libs
+library/src/main/obj
 
 *.iml
 .gradle

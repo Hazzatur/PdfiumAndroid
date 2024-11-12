@@ -316,11 +316,7 @@ class PdfiumCore(context: Context) {
 
         init {
             try {
-                System.loadLibrary("c++_shared")
-                System.loadLibrary("modpng")
-                System.loadLibrary("modft2")
-                System.loadLibrary("modpdfium")
-                System.loadLibrary("jniPdfium")
+                System.loadLibrary("pdfiumandroid")
             } catch (e: UnsatisfiedLinkError) {
                 Log.e(TAG, "Native libraries failed to load - $e")
             }

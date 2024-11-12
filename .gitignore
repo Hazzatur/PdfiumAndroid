@@ -1,10 +1,9 @@
-library/src/main/libs
-library/src/main/obj
-
 *.iml
 .gradle
 /local.properties
 .idea/
 .DS_Store
+.cxx
 /build
+/library/build
 /captures

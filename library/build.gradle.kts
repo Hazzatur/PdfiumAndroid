@@ -4,12 +4,15 @@ plugins {
     id("maven-publish")
 }
 
+val versionName = "2.0.0"
+
 android {
     namespace = "com.shockwave.pdfium"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 26
+        buildConfigField("String", "VERSION_NAME", "\"${versionName}\"")
     }
 
     compileOptions {
@@ -21,14 +24,26 @@ android {
         jvmTarget = "17"
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     sourceSets {
         getByName("main") {
-            java.srcDirs("src/main/kotlin")
-            resources.srcDirs("src/main/res")
+            java.srcDir("src/main/kotlin")
             manifest.srcFile("src/main/AndroidManifest.xml")
-            assets.srcDirs("src/main/assets")
-            jniLibs.srcDirs("src/main/libs")
+            jniLibs.srcDirs("src/main/jniLibs")
         }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+        }
+    }
+
+    buildTypes {
+        release { isMinifyEnabled = false }
     }
 }
 
@@ -50,7 +65,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.hazzatur"
                 artifactId = "pdfium-android"
-                version = "2.0.0"
+                version = versionName
             }
         }
     }

@@ -4,7 +4,7 @@ plugins {
     id("maven-publish")
 }
 
-val versionName = "2.0.0"
+val versionName = "2.0.1"
 
 android {
     namespace = "com.shockwave.pdfium"

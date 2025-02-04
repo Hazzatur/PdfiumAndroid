@@ -4,7 +4,7 @@ plugins {
     id("maven-publish")
 }
 
-val versionName = "2.0.1"
+val versionName = "2.0.2"
 
 android {
     namespace = "com.shockwave.pdfium"
@@ -45,6 +45,8 @@ android {
     buildTypes {
         release { isMinifyEnabled = false }
     }
+
+    ndkVersion = "28.0.12916984"
 }
 
 tasks.register<Jar>("sourceJar") {
